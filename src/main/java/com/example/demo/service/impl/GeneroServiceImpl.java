@@ -3,6 +3,7 @@ package com.example.demo.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.model.Genero;
 import com.example.demo.repo.GeneroRepo;
 import com.example.demo.service.IGeneroService;
 
@@ -12,9 +13,8 @@ public class GeneroServiceImpl implements IGeneroService {
 	private GeneroRepo generoRepo;
 	@Override
 	public String get(String nombre) {
-		generoRepo.findbyId(nombre);
-		
-		return null;
+		Genero genero = generoRepo.findbyId(nombre);
+		return genero.toString();
 	}
 
 

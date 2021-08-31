@@ -43,6 +43,11 @@ public void setPeliculaOSerieAsoc(Set<PeliculaOSerie> peliculaOSerieAsoc) {
 	PeliculaOSerieAsoc = peliculaOSerieAsoc;
 }
 
+@Override
+public String toString() {
+	return "Genero [nombre=" + nombre + ", PeliculaOSerieAsoc=" + PeliculaOSerieAsoc + ", imagen=" + imagen + "]";
+}
+
 
 
 }
