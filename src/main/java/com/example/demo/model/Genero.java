@@ -7,17 +7,31 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "genero")
 public class Genero {
-@Id
 @GeneratedValue(strategy = GenerationType.AUTO)
-private String nombre;
+@Id
+private int id;
 
 @ManyToMany
 private Set<PeliculaOSerie> PeliculaOSerieAsoc;
 
+private String nombre;
+
 private String imagen;
+
+
+
+public int getId() {
+	return id;
+}
+
+public void setId(int id) {
+	this.id = id;
+}
 
 public String getNombre() {
 	return nombre;

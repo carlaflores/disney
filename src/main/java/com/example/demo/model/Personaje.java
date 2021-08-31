@@ -3,12 +3,17 @@ package com.example.demo.model;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "personaje")
 public class Personaje {
-@Id	
+@Id
+@GeneratedValue(strategy = GenerationType.AUTO)
 private int id;
 
 private String imagen;

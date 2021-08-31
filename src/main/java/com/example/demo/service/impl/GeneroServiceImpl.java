@@ -11,11 +11,11 @@ import com.example.demo.service.IGeneroService;
 public class GeneroServiceImpl implements IGeneroService {
 	@Autowired
 	private GeneroRepo generoRepo;
-	@Override
-	public String get(String nombre) {
-		Genero genero = generoRepo.findbyId(nombre);
-		return genero.toString();
-	}
+	//@Override
+	//public String get(int id) {
+	//	Genero genero = generoRepo.findbyId(id);
+	//	return genero.toString();
+	//}
 
 
 }
