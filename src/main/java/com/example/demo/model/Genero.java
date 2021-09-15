@@ -9,27 +9,46 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "genero")
 public class Genero {
 @GeneratedValue(strategy = GenerationType.AUTO)
 @Id
-private int id;
-
-@ManyToMany
-private Set<PeliculaOSerie> PeliculaOSerieAsoc;
+private Integer id;
 
 private String nombre;
 
 private String imagen;
 
+@JsonIgnore
+@ManyToMany
+private Set<PeliculaOSerie> PeliculaOSerieAsoc;
+
+public Genero(String nombre, String imagen, Set<PeliculaOSerie> peliculaOSerieAsoc) {
+	super();
+	this.nombre = nombre;
+	this.imagen = imagen;
+	PeliculaOSerieAsoc = peliculaOSerieAsoc;
+}
 
 
-public int getId() {
+public Genero() {
+	super();
+}
+
+
+public Genero(Integer id) {
+	super();
+	this.id = id;
+}
+
+public Integer getId() {
 	return id;
 }
 
-public void setId(int id) {
+public void setId(Integer id) {
 	this.id = id;
 }
 
@@ -56,12 +75,5 @@ public Set<PeliculaOSerie> getPeliculaOSerieAsoc() {
 public void setPeliculaOSerieAsoc(Set<PeliculaOSerie> peliculaOSerieAsoc) {
 	PeliculaOSerieAsoc = peliculaOSerieAsoc;
 }
-
-@Override
-public String toString() {
-	return "Genero [nombre=" + nombre + ", PeliculaOSerieAsoc=" + PeliculaOSerieAsoc + ", imagen=" + imagen + "]";
-}
-
-
 
 }
