@@ -39,7 +39,8 @@ public class PeliculaOSerieServiceImpl implements IPeliculaOSerieService{
 		return peliculas;
 	}
 	
-	@Override	public List<PeliculaOSerieGetDto> getPeliculaOSerieDto() {
+	@Override
+	public List<PeliculaOSerieGetDto> getPeliculaOSerieDto() {
 		List<PeliculaOSerie> peliculaOSeries = peliculaOSerieRepo.findAll();
 		List<PeliculaOSerieGetDto> peliculaOSeriesGet = new ArrayList<PeliculaOSerieGetDto>(); 
 		for (PeliculaOSerie peliculaOSerie : peliculaOSeries) {

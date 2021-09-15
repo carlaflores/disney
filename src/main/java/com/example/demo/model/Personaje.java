@@ -9,9 +9,14 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
+@CrossOrigin("*")
+//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Table(name = "personaje")
 public class Personaje {
 
@@ -29,8 +34,9 @@ private float peso;
 
 private String historia;
 
-@JsonIgnore
+
 @ManyToMany
+@JsonBackReference
 private Set<PeliculaOSerie> PeliculaOSerieAsoc;
 
 

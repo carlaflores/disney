@@ -4,11 +4,7 @@ import java.util.Set;
 
 import javax.persistence.ManyToMany;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 public class PeliculaOSerieDto {
-	
-	//private Integer id;
 
 	private String imagen;
 
@@ -18,17 +14,11 @@ public class PeliculaOSerieDto {
 
 	private int calificacion;
 
-	@JsonIgnore
 	@ManyToMany
 	private Set<Integer> personajeAsoc;
 
-	@JsonIgnore
 	@ManyToMany
 	private Set<Integer> generoAsoc;
-	/*
-	public Integer getId() {
-		return id;
-	}*/
 
 	public String getImagen() {
 		return imagen;

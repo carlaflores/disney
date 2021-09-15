@@ -9,9 +9,14 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
+@CrossOrigin("*")
+//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Table(name = "genero")
 public class Genero {
 @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,8 +27,9 @@ private String nombre;
 
 private String imagen;
 
-@JsonIgnore
+
 @ManyToMany
+@JsonBackReference
 private Set<PeliculaOSerie> PeliculaOSerieAsoc;
 
 public Genero(String nombre, String imagen, Set<PeliculaOSerie> peliculaOSerieAsoc) {

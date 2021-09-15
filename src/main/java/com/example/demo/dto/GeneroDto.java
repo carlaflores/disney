@@ -4,15 +4,12 @@ import java.util.Set;
 
 import javax.persistence.ManyToMany;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 public class GeneroDto {
 
 	private String nombre;
 
 	private String imagen;
 
-	@JsonIgnore
 	@ManyToMany
 	private Set<Integer> PeliculaOSerieAsoc;
 
