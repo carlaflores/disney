@@ -34,7 +34,6 @@ private float peso;
 
 private String historia;
 
-
 @ManyToMany
 @JsonBackReference
 private Set<PeliculaOSerie> PeliculaOSerieAsoc;
