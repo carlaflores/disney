@@ -53,6 +53,7 @@ public class AuthenticationController {
 	@PostMapping("/register")
 	public ResponseEntity<?> createAccount(@RequestBody UsuarioDto usuarioDto){
 		Usuario usuario = usuarioService.save(usuarioDto);
+		usuario.setPassword(null);
 		return new ResponseEntity<>(usuario, HttpStatus.ACCEPTED);
 	}
 	
